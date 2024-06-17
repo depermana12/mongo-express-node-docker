@@ -5,8 +5,8 @@ import { fileURLToPath } from "url";
 import mongoose from "mongoose";
 import "dotenv/config";
 
-import connectDB from "./config/db.js";
-import Tour from "./models/tourModel.js";
+import connectDB from "../config/db.js";
+import Tour from "../models/tourModel.js";
 
 connectDB();
 
@@ -14,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const tours = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "data", "tours-simple.json"), "utf-8")
+  fs.readFileSync(path.join(__dirname, "tours-simple.json"), "utf-8")
 );
 
 const importData = async () => {

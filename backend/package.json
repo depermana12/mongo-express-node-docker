@@ -5,10 +5,11 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "cross-env NODE_ENV=production nodemon server.js",
+    "start": "node server.js",
+    "server": "nodemon server.js",
     "dev": "nodemon server.js",
-    "data:import": "node seeder.js",
-    "data:destroy": "node seeder.js -d"
+    "data:import": "node data/seeder.js",
+    "data:destroy": "node data/seeder.js -d"
   },
   "keywords": [],
   "author": "Depermana",
