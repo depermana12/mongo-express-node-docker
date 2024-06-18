@@ -1,9 +1,8 @@
-version: "3.8"
+version: "2.4"
 
 services:
   mongo:
     restart: always
-    env_file: ./.env
     image: mongo:8.0.0-rc8
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
@@ -24,20 +23,6 @@ services:
       - /usr/src/app/node_modules
     networks:
       - express-mongo
-    environment:
-      - NODE_ENV=${NODE_ENV}
-      - PORT=${PORT}
-      - MONGO_USERNAME=${MONGO_USERNAME}
-      - MONGO_PASSWORD=${MONGO_PASSWORD}
-      - MONGO_HOST=${MONGO_HOST}
-      - MONGO_DB=${MONGO_DB}
-      - MONGO_OPTIONS=${MONGO_OPTIONS}
-      - JWT_SECRET=${JWT_SECRET}
-      - JWT_EXPIRE=${JWT_EXPIRE}
-      - EMAIL=${EMAIL}
-      - EMAIL_PASS=${EMAIL_PASS}
-      - EMAIL_HOST=${EMAIL_HOST}
-      - EMAIL_PORT=${EMAIL_PORT}
     depends_on:
       - mongo
     env_file: ./.env
